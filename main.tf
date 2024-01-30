@@ -1,15 +1,15 @@
 # Data source for our SSH key
 
-data "digitalocean_ssh_key" "karo-dokey" {
+data "digitalocean_ssh_key" "patdada-dokey" {
   name = "id_rsa.pub"
 }
 
 # Creating a Digital Ocean Droplet
-resource "digitalocean_droplet" "karo-droplet" {
+resource "digitalocean_droplet" "patdada-droplet" {
   image    = var.image
   name     = var.droplet_name
   region   = var.droplet_region
   size     = var.image_size
-  ssh_keys = [data.digitalocean_ssh_key.karo-dokey.id]
+  ssh_keys = [data.digitalocean_ssh_key.patdada-dokey.id]
 }
 
